@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+//SE IMPORTA ROUTER Y NAVIGATIONEXTRAS PARA HACER EL ENVÍO DE INFORMACIÓN HACIA OTRO PAGE.
 import { Router, NavigationExtras } from '@angular/router';
 
 @Component({
@@ -13,7 +14,8 @@ export class LoginPage implements OnInit {
     nombre:'',
     password:''
   };
-  constructor() { }
+  //CREACIÓN DE LA INSTANCIA ROUTER PARA PERMITIR EL ENVÍO DE LA INFORMACIÓN.
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -21,6 +23,12 @@ export class LoginPage implements OnInit {
   onSubmitTemplate(){
     console.log("guardado")
     console.log(this.usuario)
+    let navigationExtras: NavigationExtras = {
+      state: {
+        user: this.usuario // Al estado se asignamos un objeto con clave y valor
+      }
+    };
+    this.router.navigate(['/home'],navigationExtras); // navegamos hacia el Home y enviamos información adicional
   }
 
 }

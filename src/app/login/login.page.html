@@ -28,7 +28,7 @@
       <!-- [(ngModel)]="usuario.password" ALMACENA EL VALOR INGRESADO EN EL INPUT PARA PODER IMPRIMIRLO EN EL PAGE HOME SE ESPECIFICA QUE TENFA UN MINIMO DE 3 CARÁCTERES Y UN MÁXIMO DE 8. -->
       <ion-item>
         <ion-label position="floating">Usuario</ion-label>
-        <ion-input type="text" name="user" minlength=3 maxlength=8 [(ngModel)]="usuario.nombre" required></ion-input>
+        <ion-input type="text" name="user" minlength=3 maxlength=8 [(ngModel)]="usuario.nombre"  required></ion-input>
       </ion-item>
       
       <ion-item>
@@ -39,7 +39,7 @@
 
     </ion-lis>
     <!-- MIENTRAS EL FORMULARIO NO SEA VÁLIDO EL BOTÓN NO SE HABILITARÁ. -->
-    <ion-button expand="full" type="submit" [disabled]="formulario.invalid"> Registrar</ion-button>
+    <ion-button expand="full" type="submit" [disabled]="formulario.invalid" [routerLink]="['/home']"> Registrar</ion-button>
 
   </form>
   
