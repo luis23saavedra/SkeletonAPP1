@@ -9,6 +9,19 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class HomePage {
 
+  //CREACIÓN DEL ARREGLO PARA CAPTURAR LOS DATOS DEL USUARIO.
+  datos = {
+    nombre:'',
+    edad:''
+  };
+
+  mostrarDatos(){
+      console.log("obteniendo datos")
+      console.log(this.datos)
+
+  }
+  
+
   data: any; // Generamos una variable Any (permite cualquier valor)
   /**
    * En el constructor del HomePage se colocan por parametros
@@ -26,8 +39,9 @@ export class HomePage {
       if (this.router.getCurrentNavigation().extras.state) { // Validamos que en la navegacion actual tenga extras
         this.data = this.router.getCurrentNavigation().extras.state.user; // Si tiene extra rescata lo enviado
         console.log(this.data) // Muestra por consola lo traido
-      }else{this.router.navigate(["/login"])} // Si no tiene extra la navegacion actual navegar al login
+      }//else{this.router.navigate(["/login"])} // Si no tiene extra la navegacion actual navegar al login
     });
+
   }
 
 }

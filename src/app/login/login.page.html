@@ -34,7 +34,7 @@
       <ion-item>
         <ion-label position="floating">Password</ion-label>
         <ion-input type="password" name="password" [(ngModel)]="usuario.password" 
-        minlength=4 maxlength=4 required></ion-input>
+        minlength=4 maxlength=4 pattern="^[0-9]+$" required></ion-input>
       </ion-item>
 
     </ion-lis>

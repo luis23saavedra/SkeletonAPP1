@@ -8,28 +8,91 @@
 
  <ion-content [fullscreen]="true">
  
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title class="ion-text-center"><h1>Bienvenido!</h1></ion-card-title>
-      <!-- {{interpolacion}} 
-          Permite mostrar los datos desde el script a la visual
-          verificar el data en el home.page.ts
-        -->
-      <ion-label >Usuario: {{data.nombre}}</ion-label>
-    </ion-card-header>
+  <h1 class="ion-text-center">Bienvenido!</h1>
+
+  <ion-row class="ion-margin-bottom">
+    <ion-col >
+      Usuario:
+    </ion-col>
+    <ion-col >
+      {{data.nombre}}
+    </ion-col>
+  </ion-row>
+
+  <ion-row >
+    <ion-col >
+      <h2 class="ion-text-center ">Información adicional</h2>
+    </ion-col>
+  </ion-row>
   
-    <ion-card-content>
-      <ion-card-subtitle>
-        <h3 class="ion-text-center"> Información adicional</h3>
-      </ion-card-subtitle>
-      <form action="">
-        <ion-item>
-          <ion-label position="fixed">Nombre</ion-label>
-          <ion-input placeholder="Ingrese nombre"></ion-input>
-        </ion-item>
-      </form>
-      
-    </ion-card-content>
-  </ion-card>
+  <form action="" #formulario="ngForm" (ngSubmit)="mostrarDatos()">
+
+  <ion-row >
+    <ion-col class="ion-margin-top" >
+      Nombre
+    </ion-col>
+    <ion-col >
+      <mat-form-field appearance="fill">
+        <mat-label>Ingrese su nombre</mat-label>
+        <input matInput name="nombre" [(ngModel)]="datos.nombre">
+      </mat-form-field>
+    </ion-col>
+  </ion-row>
+  <ion-row >
+    <ion-col class="ion-margin-top" size="12">
+      Edad
+    </ion-col>
+    <ion-col >
+      <mat-form-field appearance="fill" >
+        <mat-label>Ingrese su edad</mat-label>
+        <input matInput name="edad" [(ngModel)]="datos.edad">
+      </mat-form-field>
+    </ion-col>
+  </ion-row>
+  <ion-row >
+    <ion-col class="ion-margin-top">
+      Nivel Educación
+    </ion-col>
+    <ion-col >
+      <mat-form-field appearance="fill">
+        <mat-label>Seleccione Nivel</mat-label>
+        <mat-select>
+          <mat-option >Educación Básica</mat-option>
+          <mat-option >Educación Media</mat-option>
+          <mat-option >Educación Superior</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </ion-col>
+  </ion-row>
+  <ion-row >
+    <ion-col class="ion-margin-top">
+      Fecha Nacimiento
+    </ion-col>
+    <ion-col >
+      <mat-form-field appearance="fill">
+        <mat-label>Seleccione una fecha</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </ion-col>
+  </ion-row> 
+
+  <mat-divider></mat-divider>
+  
+  <div class="example-button-row">
+    
+    <ion-row class="ion-margin-top">
+      <ion-col class="ion-margin-start">
+        <button mat-raised-button color="accent" >Limpiar</button>
+      </ion-col>
+      <ion-col class="ion-margin-start">
+        <button mat-raised-button color="warn" type="submit">Mostrar</button>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  </form>
   
 </ion-content>
