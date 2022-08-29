@@ -29,6 +29,12 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'mostrar1',
+    loadChildren: () => import('./mostrar1/mostrar1.module').then( m => m.Mostrar1PageModule)
+  },
+  
+  
 ];
 
 @NgModule({

@@ -12,14 +12,24 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
-
+import {MatDividerModule} from '@angular/material/divider';
+//IMPORT MODULE VENTANA EMERGENTE.
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule,MatDatepickerModule,MatInputModule,MatFormFieldModule,MatNativeDateModule,MatSelectModule,MatButtonModule
+    HomePageRoutingModule,
+    MatDatepickerModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatNativeDateModule,
+    MatSelectModule,
+    MatButtonModule,
+    MatDialogModule,
+    MatDividerModule
   ],
   declarations: [HomePage]
 })

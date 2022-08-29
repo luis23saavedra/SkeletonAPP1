@@ -8,7 +8,6 @@ import { Router, NavigationExtras } from '@angular/router';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  
   //CREACIÓN DEL ARREGLO PARA CAPTURAR LOS DATOS DEL USUARIO.
   usuario = {
     nombre:'',

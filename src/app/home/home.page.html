@@ -40,12 +40,12 @@
   </ion-row>
   <ion-row >
     <ion-col class="ion-margin-top" size="12">
-      Edad
+      Apellido
     </ion-col>
     <ion-col >
       <mat-form-field appearance="fill" >
-        <mat-label>Ingrese su edad</mat-label>
-        <input matInput name="edad" [(ngModel)]="datos.edad">
+        <mat-label>Ingrese su apellido</mat-label>
+        <input matInput name="apellido" [(ngModel)]="datos.apellido">
       </mat-form-field>
     </ion-col>
   </ion-row>
@@ -88,7 +88,7 @@
         <button mat-raised-button color="accent" >Limpiar</button>
       </ion-col>
       <ion-col class="ion-margin-start">
-        <button mat-raised-button color="warn" type="submit">Mostrar</button>
+        <button mat-raised-button color="warn" (click)="openDialog('3000ms', '1500ms')" type="submit">Mostrar</button>
       </ion-col>
     </ion-row>
   </div>
